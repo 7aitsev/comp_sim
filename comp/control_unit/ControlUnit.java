@@ -11,14 +11,14 @@ public class ControlUnit extends UIControlUnit {
   private ArithLogicUnit alu = new ArithLogicUnit();
   private ProgramCounter pc = new ProgramCounter();
   private InstructionRegister ir = new InstructionRegister();
-  
+
   public ControlUnit(int start, RandAccMemory ram, ArithLogicUnit alu) {
     this.ram = ram;
     this.alu = alu;
 
     pc.setData(start);
   }
-  
+
   private class ProgramCounter implements IntRegister {
     Register dat1 = new Register(),
              dat2 = new Register();
@@ -68,18 +68,11 @@ public class ControlUnit extends UIControlUnit {
       cmd.setData(instruction);
       pc.inc(1); ram.setData(pc.getData()); dat1.setData(ram.getData());
       pc.inc(1); ram.setData(pc.getData()); dat2.setData(ram.getData());
-//      if(instruction != Commands.HLT) {
-//        pc.inc(1); ram.setData(pc.getData()); dat1.setData(ram.getData());
-//        pc.inc(1); ram.setData(pc.getData()); dat2.setData(ram.getData());
-//      }
-//      else {
-//        dat1.setData(0); dat2.setData(0);
-//      }
       updateIr(Integer.toString(this.getData()) + " " +            // connected
                              Integer.toString(this.getAddress())); //  with UI
     }
   }
-  
+
   /*
    * MAR ← PC
    * IR ← RAM[MAR], PC ← PC+1
@@ -92,13 +85,13 @@ public class ControlUnit extends UIControlUnit {
 //    int dat = ram.getData();
 //    ir.setData(dat); pc.inc(1);
   }
-  
+
   public int executeInstruction() {
     int instruction, address, memVal;
 
     this.fetchCycle();
     instruction = ir.getData();
-  
+
   switch (instruction) {
     case Commands.ADD:
       address = ir.getAddress();
@@ -153,7 +146,7 @@ public class ControlUnit extends UIControlUnit {
     }
   return instruction;
   }
-  
+
   public void putInstruction(int addr, int instr, int dat1, int dat2) {
     ram.put(addr, instr);
     ram.put(addr+1, dat1);
@@ -167,7 +160,7 @@ public class ControlUnit extends UIControlUnit {
   public int getAddrFromPC() {
     return pc.getData();
   }
-  
+
   public void resetCu() {
     pc.setData(0);
     ir.dat1.setData(0); ir.dat2.setData(0);
