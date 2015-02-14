@@ -114,6 +114,12 @@ public class ControlUnit extends UIControlUnit {
       alu.loadToRegB(memVal);
       alu.subWithoutBorrow();
       break;
+    case Commands.SBB:
+      address = ir.getAddress();
+      ram.setData(address);
+      memVal = ram.getData();
+      alu.loadToRegB(memVal);
+      alu.subWithoutBorrow();
     case Commands.HLT:
       break;
     case Commands.LOD:
