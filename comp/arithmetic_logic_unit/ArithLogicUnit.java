@@ -34,23 +34,28 @@ public class ArithLogicUnit extends UIArithLogicUnit {
     int sum = operandA.getData() + operandB.getData() + flag;
     sum &= DataBus.getCapacityMask();
     loadToRegA(sum);
+    flag = ((sum & (1 << DataBus.getCapacity()))) != 0 ? (byte)1 : (byte)0;
   }
 
   public void subWithoutBorrow() {
     int diff = operandA.getData() - operandB.getData();
+    if(diff < 0) {
+      diff += 0x100;
+      flag = 1;
+    } else
+      flag = 0;
     loadToRegA(diff & DataBus.getCapacityMask());
   }
 
   public void subWithBorrow() {
     int diff = operandA.getData() - operandB.getData() - flag;
     if(diff < 0) {
+      diff += 0x100;
       flag = 1;
-      diff += 100;
     }
     else
       flag = 0;
-    diff &= DataBus.getCapacityMask();
-    loadToRegA(diff);
+    loadToRegA(diff &= DataBus.getCapacityMask(););
   }
 
   public int getRegA() {
