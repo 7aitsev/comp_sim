@@ -119,7 +119,7 @@ public class ControlUnit extends UIControlUnit {
       ram.setData(address);
       memVal = ram.getData();
       alu.loadToRegB(memVal);
-      alu.subWithoutBorrow();
+      alu.subWithBorrow();
     case Commands.HLT:
       break;
     case Commands.LOD:
