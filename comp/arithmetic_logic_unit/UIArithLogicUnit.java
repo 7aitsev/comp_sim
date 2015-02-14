@@ -19,8 +19,8 @@ public class UIArithLogicUnit implements ActionListener {
   public JPanel ALUPanel;
 
   public UIArithLogicUnit() {
-    opALabel = new JLabel("AX:");
-    opBLabel = new JLabel("BX:");
+    opALabel = new JLabel("A:");
+    opBLabel = new JLabel("B:");
     opATField = new JTextField("00");
     opBTField = new JTextField("00");
     opATField.setFont(GenSettings.FONT);
