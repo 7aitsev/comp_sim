@@ -147,16 +147,6 @@ public class ControlUnit extends UIControlUnit {
   return instruction;
   }
 
-  public void putInstruction(int addr, int instr, int dat1, int dat2) {
-    ram.put(addr, instr);
-    ram.put(addr+1, dat1);
-    ram.put(addr+2, dat2);
-  }
-  
-  public void put(int addr, int data) {
-    ram.put(addr, data);
-  }
-
   public int getAddrFromPC() {
     return pc.getData();
   }
