@@ -55,7 +55,7 @@ public class ArithLogicUnit extends UIArithLogicUnit {
     }
     else
       flag = 0;
-    loadToRegA(diff &= DataBus.getCapacityMask(););
+    loadToRegA(diff &= DataBus.getCapacityMask());
   }
 
   public int getRegA() {
