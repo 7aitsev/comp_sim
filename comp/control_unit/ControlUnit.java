@@ -130,7 +130,6 @@ public class ControlUnit extends UIControlUnit {
       break;
     case Commands.STO:
       address = ir.getAddress();
-      ram.setData(address);
       memVal = alu.getRegA();
       ram.put(address, memVal);
       break;
