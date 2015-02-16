@@ -149,7 +149,7 @@ public class Computer extends    JPanel
         resumeExecution();
       }
       step.setEnabled(false);
-      status.setStatus("Running...\nPress <Halt> to enable the"
+      status.setStatus("Running...\nPress <Halt> to enable the "
         + "<Single Step> button.");
     }
     else if(e.getSource() == step) {
