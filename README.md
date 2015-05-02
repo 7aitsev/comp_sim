@@ -1,8 +1,8 @@
 <h1>Computer simulator</h1>
-<p>This is the simple <i><strong>computer system simulator</strong></i> which has started as a course project on the Programming course in Saint Petersburg State Polytechnical University.<br></p>
+<p>This is the simple <i><strong>computer system simulator</strong></i> which has started as a course project on the Programming course in Peter the Greate Saint Petersburg State Polytechnic University.<br></p>
 <hr />
 <h3>User interface</h3>
-<img src="http://cs610929.vk.me/u259212077/docs/3478d5908b33/img.png?extra=75Lp8GjQYR5yu82PSWlRIkRnmz4qjMRfswdwvdCoQCj5csy54VFoek7ijcDvOsLPaWhrOL_w9ymUaNHkk3RLdW-NKW2tW9Mq" alt="Main window">
+<img src="screenshots/main_window.png" alt="Main window">
 <h3>Instructions Table</h3>
 <p>Here's a set of possible mnemonics for the machine codes that the computer recognizes:</p>
 <table>
