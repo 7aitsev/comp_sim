@@ -1,71 +1,36 @@
-<h1>Computer simulator</h1>
-<p>This is the simple <i><strong>computer system simulator</strong></i> which has started as a course project on the Programming course in Peter the Greate Saint Petersburg State Polytechnic University.<br></p>
-<hr />
-<h3>User interface</h3>
-<img src="screenshots/main_window.png" alt="Main window">
-<h3>Instructions Table</h3>
-<p>Here's a set of possible mnemonics for the machine codes that the computer recognizes:</p>
-<table>
-  <tr>
-    <td><b>Operation</b></td>
-    <td><b>Code</b></td>
-    <td><b>Mnemonic</b></td>
-  </tr>
-  <tr>
-    <td>Load</td>
-    <td>0b0001</td>
-    <td>LOD</td>
-  </tr>
-  <tr>
-    <td>Store</td>
-    <td>0b1000</td>
-    <td>STO</td>
-  </tr>
-  <tr>
-    <td>Add</td>
-    <td>0b0010</td>
-    <td>ADD</td>
-  </tr>
-  <tr>
-    <td>Substract</td>
-    <td>0b0011</td>
-    <td>SUB</td>
-  </tr>
-  <tr>
-    <td>Add with Carry</td>
-    <td>0b0100</td>
-    <td>ADC</td>
-  </tr>
-  <tr>
-    <td>Substract with Borrow</td>
-    <td>0b0101</td>
-    <td>SBB</td>
-  </tr>
-  <tr>
-    <td>Jump</td>
-    <td>0b0110</td>
-    <td>JMP</td>
-  </tr>
-  <tr>
-    <td>Jump If Zero</td>
-    <td>0b1010</td>
-    <td>JZ</td>
-  </tr>
-  <tr>
-    <td>Jump If Not Zero</td>
-    <td>0b1001</td>
-    <td>JNZ</td>
-  </tr>
-  <tr>
-    <td>Halt</td>
-    <td>0b0111</td>
-    <td>HLT</td>
-  </tr>
-</table>
-<h3>Examples</h3>
-<p>There are examples of programs for the simulator below:</p>
-<h6>First example:</h6>
-<pre>
+# Computer simulator
+
+This is the simple *computer system simulator* which started as a course project at Peter the Great St.Petersburg Polytechnic University.
+
+---
+
+### User interface
+
+![Main window](screenshots/main_window.png "Main Window")
+
+### Instructions Table
+
+Here's a set of possible mnemonics for the machine codes that the computer recognizes:
+
+| Operation            | Code     | Mnemonic   |
+|----------------------|----------|------------|
+| Load                 | `0b0001` | `LOD`      |
+| Store                | `0b1000` | `STO`      |
+| Add                  | `0b0010` | `ADD`      |
+| Subtract             | `0b0011` | `SUB`      |
+| Add with Carry       | `0b0100` | `ADC`      |
+| Subtract with Borrow | `0b0101` | `SBB`      |
+| Jump                 | `0b0110` | `JMP`      |
+| Jump If Zero         | `0b1010` | `JZ `      |
+| Jump If Not Zero     | `0b1001` | `JNZ`      |
+| Halt                 | `0b0111` | `HLT`      |
+
+### Examples
+
+There are examples of programs for the simulator below:</p>
+###### First example:
+
+```text
 ;  Multiply 8-bit values 0xA7 and 0x1C
 BEGIN:  LOD A, [RESULT+1] ; Load  byte at address RESULT+1 into accumulator
         ADD A, [NUM1+1]   ; Add byte at address NUM1+1 to accumulator
@@ -90,9 +55,11 @@ DEC:    FF                ; On the 28 (0x1C) time through value 1 will be added
 NUM1:   00, A7
 NUM2:   00, 1C
 RESULT: 00, 00            ; 16-bit value goes here
-</pre>
-<h6>Second example</h6>
-<pre>
+```
+
+###### Second example
+
+```text
 ; Add two 8-bit numbers together and subtract a third
        LOD A, [NUM1]
        ADD A, [NUM1+1]
@@ -102,5 +69,6 @@ RESULT: 00, 00            ; 16-bit value goes here
 
 NUM1: 45, A9, 8E
 SAVE: 00 ; Final result goes here
-</pre>
-<b>Don't try to place labels before or between instructions.</b> It doesn't work temporarily. Type labels only after all commands.
+```
+
+NOTE: don't try to place labels before or between instructions: it doesn't work temporarily. Type labels only after all commands.
